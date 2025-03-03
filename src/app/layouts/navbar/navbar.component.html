@@ -11,25 +11,27 @@
         </svg>
     </button>
     <div class="hidden flex-grow w-full md:flex md:w-auto" id="navbar-default">
-
-      <ul class="capitalize flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-2 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
-          <a routerLink="/home"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">home</a>
-        </li>
-        <li>
-          <a routerLink="/products"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">products</a>
-        </li>
-        <li>
-          <a routerLink="/cart"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">cart</a>
-        </li>
-        
-        <li>
-          <a routerLink="/categories"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">categories</a>
-        </li>
-        <li>
-          <a routerLink="/brands"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">brands</a>
-        </li>
-      </ul>
+@if(isLogin()){
+  <ul class="capitalize flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-2 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+    <li>
+      <a routerLink="/home"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">home</a>
+    </li>
+    <li>
+      <a routerLink="/products"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">products</a>
+    </li>
+    <li>
+      <a routerLink="/cart"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">cart</a>
+    </li>
+    
+    <li>
+      <a routerLink="/categories"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">categories</a>
+    </li>
+    <li>
+      <a routerLink="/brands"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">brands</a>
+    </li>
+  </ul>
+}
+   
 
 
       <ul class="ms-auto items-center capitalize flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-0 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -56,16 +58,16 @@
             <li class="fab fa-linkedin-in"></li>
           </a>
         </li>
-
-        <li>
-          <a routerLink="/login"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">login</a>
-        </li>
-        <li>
-          <a routerLink="/register"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">register</a>
-        </li>
-        <li>
-          <a role="button" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">logOut</a>
-        </li>
+@if(!isLogin()){  <li>
+  <a routerLink="/login"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">login</a>
+</li>
+<li>
+  <a routerLink="/register"routerLinkActive="bg-green-600 text-white" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">register</a>
+</li>}
+      @else {   <li>
+        <a role="button" class="block py-2 px-3 text-gray-700 rounded-sm " aria-current="page">logOut</a>
+      </li>}
+     
       </ul>
     </div>
   </div>
